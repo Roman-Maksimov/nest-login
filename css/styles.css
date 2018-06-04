@@ -1,0 +1,176 @@
+@font-face {
+    font-family: 'Akkurat';
+    src: url('../fonts/lineto_akkurat_pro/regular.eot');
+    src: url('../fonts/lineto_akkurat_pro/regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lineto_akkurat_pro/regular.woff') format('woff'),
+         url('../fonts/lineto_akkurat_pro/regular.ttf') format('truetype'),
+         url('../fonts/lineto_akkurat_pro/regular.svg#AkkuratProRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Akkurat";
+    src: url('../fonts/lineto_akkurat_pro/light.woff') format("woff"),
+         url('../fonts/lineto_akkurat_pro/light.svg') format("svg"),
+         url('../fonts/lineto_akkurat_pro/light.eot') format("embedded-opentype"),
+         url('../fonts/lineto_akkurat_pro/light.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Akkurat";
+    src: url('../fonts/lineto_akkurat_pro/light_italic.woff') format("woff"),
+         url('../fonts/lineto_akkurat_pro/light_italic.svg') format("svg"),
+         url('../fonts/lineto_akkurat_pro/light_italic.eot') format("embedded-opentype"),
+         url('../fonts/lineto_akkurat_pro/light_italic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+
+html {
+    background: #f9f9f9;
+    font-size: 8px;
+}
+
+body {
+    margin: 0;
+    background: transparent;
+    font-family: Akkurat, Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 8px;
+}
+
+a,
+a:active,
+a:visited {
+    transition: color,.3s;
+    color: #00c3e8;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3d4247;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 100;
+}
+
+.login {
+    margin: 50px 0;
+    text-align: center;
+    color: #768089;
+    font-size: 2rem;
+}
+
+.login-container {
+    position: relative;
+    margin: 0 auto;
+    width: 375px;
+    background: #fff;
+    padding: 4rem;
+    border-radius: 2px;
+    color: #3b434a;
+    box-sizing: border-box;
+}
+
+.login-button {
+    margin: 3rem 0;
+}
+
+.login-button .abcRioButtonBlue {
+    margin: auto;
+    color: #fff;
+    background-color: #00c3e8;
+    border-radius: 2px;
+}
+
+.login-button .abcRioButtonBlue:hover {
+    background-color: #069ab6;
+    box-shadow: 0 0 3px 3px rgba(0,195,232,.3)
+}
+
+.login-error {
+    display: none;
+    color: #de3236;
+}
+
+.login-container_error .abcRioButtonBlue {
+    box-shadow: 0 2px 4px 0 rgba(222, 50, 38, .5);
+    background-color: rgba(222, 50, 38, .5);
+    animation: button-error-background 5s linear infinite;
+}
+
+.login-container_error .login-error {
+    display: block;
+}
+
+/* #welcome container */
+
+.login-container#welcome {
+    text-align: left;
+}
+
+.login-loader {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: rgba(0,195,232,.3);
+    overflow: hidden;
+}
+
+.login-loader::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #00c3e8;
+    transform: scaleX(0);
+    transform-origin: center center;
+    transition-duration: .35s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    animation: linear-indeterminate-bar 1s linear infinite;
+    content: '';
+}
+
+@keyframes button-error-background {
+    0%,
+    20%,
+    100% {
+        background-color: #00c3e8;
+    }
+
+    10% {
+        background-color: rgba(222, 50, 38, .75);
+    }
+}
+
+@keyframes linear-indeterminate-bar {
+    0% {
+        transform: translate(-50%) scaleX(0);
+    }
+
+    50% {
+        transform: translate(-0%) scaleX(0.3);
+    }
+
+    100% {
+        transform: translate(50%) scaleX(0);
+    }
+}
+
+@media (max-width: 599px) {
+    html {
+        font-size: 6px;
+    }
+
+    .login-container {
+        width: 100%;
+    }
+}
