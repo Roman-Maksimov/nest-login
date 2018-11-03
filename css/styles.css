@@ -31,7 +31,7 @@
 
 
 html {
-    background: #f9f9f9;
+    background: #e9eaee;
     font-size: 8px;
 }
 
@@ -54,27 +54,171 @@ a:hover {
     color: #3d4247;
 }
 
-h1 {
-    font-size: 3.5rem;
-    font-weight: 100;
-}
-
 .login {
-    margin: 50px 0;
+    position: relative;
+    height: 100vh;
+    min-height: 400px;
     text-align: center;
     color: #768089;
     font-size: 2rem;
 }
 
-.login-container {
+.logo {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    stroke-width: 4px;
+    z-index: 0;
+    animation: logo 1.5s cubic-bezier(.4, 0, .2, 1) 0s 1;
+    animation-fill-mode: forwards;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    width: 200px;
+    height: 200px;
+}
+
+.circle-border {
+    fill: none;
+    stroke-width: 1px;
+    stroke-dasharray: 0, 300;
+    animation: circle-border 1.5s cubic-bezier(.4, 0, .2, 1) 1.5s 1;
+    animation-fill-mode: forwards;
+}
+
+.circle-background {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+    animation: fade .5s linear 2.5s 1;
+    animation-fill-mode: forwards;
+
+}
+
+.g-label {
+    fill: none;
+    cursor: pointer;
+}
+
+.g-label__group {
+    filter: url(#f-shadow);
+}
+
+.g-label__group path {
+    -webkit-transition: fill .35s cubic-bezier(.4, 0, .2, 1);
+       -moz-transition: fill .35s cubic-bezier(.4, 0, .2, 1);
+         -o-transition: fill .35s cubic-bezier(.4, 0, .2, 1);
+            transition: fill .35s cubic-bezier(.4, 0, .2, 1);
+    fill: #00c3e8;
+}
+
+.g-label:hover .g-label__group path {
+    fill: #069ab6;
+}
+
+.title {
+    position: absolute;
+    top: -12rem;
+    width: 100%;
+    line-height: 1.7;
+    opacity: 0;
+    font-size: 2rem;
+    font-weight: 100;
+    animation: hint 1s linear 4s 1;
+    animation-fill-mode: forwards;
+}
+
+.title span {
+    font-size: 4rem;
+}
+
+.hint {
     position: relative;
-    margin: 0 auto;
-    width: 375px;
-    background: #fff;
-    padding: 4rem;
-    border-radius: 2px;
-    color: #3b434a;
+    margin-top: 40px;
+    opacity: 0;
+    font-size: 3rem;
+    animation: hint 1s linear 4s 1;
+    animation-fill-mode: forwards;
+}
+
+.hint_error {
+    color: #de3236;
+    font-size: 2rem
+}
+
+.hint::before {
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -15px;
+    width: 20px;
+    height: 20px;
+    border-left: 3px solid #768089;
+    border-top: 3px solid #768089;
+    transform: rotate(45deg);
+    animation: hint-arrow .5s linear 5s infinite;
+    content: '';
+}
+
+/* index2.html */
+
+.form {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-left: -200px;
+    width: 400px;
+    animation: form 2s cubic-bezier(.4, 0, .2, 1) 3s 1;
+    animation-fill-mode: forwards;
+}
+
+.form::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
     box-sizing: border-box;
+    animation: form-border .5s linear 2s 1;
+    animation-fill-mode: forwards;
+    content: '';
+}
+
+.form::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    box-sizing: border-box;
+    animation: form-border .5s linear 2.5s 1;
+    animation-fill-mode: forwards;
+    content: '';
+}
+
+.form-content {
+    position: relative;
+    padding: 4rem;
+    box-sizing: border-box;
+    z-index: 1;
+    opacity: 0;
+    animation: fade .5s cubic-bezier(.4, 0, .2, 1) 5s 1;
+    animation-fill-mode: forwards;
 }
 
 .login-button {
@@ -108,6 +252,26 @@ h1 {
     display: block;
 }
 
+.welcome {
+    position: absolute;
+    top: -16rem;
+    width: 100%;
+}
+
+.welcome__text {
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    font-weight: 100;
+    opacity: 0;
+    animation: fade .5s ease-in-out 4s 1;
+    animation-fill-mode: forwards;
+}
+
+.welcome__text:nth-child(2) {
+    animation-delay: 4.5s;
+}
+
+
 /* #welcome container */
 
 .login-container#welcome {
@@ -117,7 +281,7 @@ h1 {
 .login-loader {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     height: 4px;
     background-color: rgba(0,195,232,.3);
@@ -139,38 +303,14 @@ h1 {
     content: '';
 }
 
-@keyframes button-error-background {
-    0%,
-    20%,
-    100% {
-        background-color: #00c3e8;
-    }
-
-    10% {
-        background-color: rgba(222, 50, 38, .75);
-    }
-}
-
-@keyframes linear-indeterminate-bar {
-    0% {
-        transform: translate(-50%) scaleX(0);
-    }
-
-    50% {
-        transform: translate(-0%) scaleX(0.3);
-    }
-
-    100% {
-        transform: translate(50%) scaleX(0);
-    }
-}
-
 @media (max-width: 599px) {
     html {
         font-size: 6px;
     }
 
-    .login-container {
+    .form {
+        left: 0;
+        margin-left: 0;
         width: 100%;
     }
 }

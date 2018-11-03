@@ -2,51 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-signin-client_id" content="542471590977-1mcbrdd3g7jmr1v4artceagt2d8t9ih4.apps.googleusercontent.com">
     <title>Support Admin Tool</title>
-    <link rel="stylesheet" type="text/css" href="https://supportadmin.nestlabs.com/css/vendors.css?rel=1526502096194">
-    <link rel="stylesheet" type="text/css" href="https://supportadmin.nestlabs.com/css/styles.css?rel=1526502096194">
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-    <nav id="top" class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <div id="_session_view">Support Admin</div>
-            </div>
-            <div class="ajax-loader-container">
-                <div id="ajax_loader"></div>
-            </div>
-            <div id="_search_view"></div>
-        </div>
-    </nav>
-    <div class="container login">
-        <div id="full_view">
-            <div class="login">
-                <a href="https://nest.com" class="link" title="Nest" itemprop="url">
-                    <img class="nest-icon" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCA0NiAyMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+TmVzdCBMb2dvPC90aXRsZT48cGF0aCBkPSJNMzMuNjUzIDE0LjEyYy44NjcuMzgyIDEuMzg1IDEuMTAyIDEuMzg1IDEuOTI0IDAgMS4wODgtLjgxIDEuNzM2LTIuMTcgMS43MzYtMS40NDMgMC0yLjExMy0xLjMxLTIuMjg1LTEuNzFsLS4yMS0uNDk2SDI3LjY3bC0uMDA0LS4wMDRoLTIuNTA0Yy0uNjgzIDEuMTc2LTIuMDYgMi4yNjEtMy42NjIgMi4yNjEtMi44OSAwLTQuMzMyLTIuMzI5LTQuNTE3LTQuNjI4aDExLjgxMlYxMi43YzAtLjk1NC0uMDk2LTEuODUtLjI3Ni0yLjY4NC4zMzggMS4wNyAxLjExIDIuMTc3IDIuNzI1IDIuOTYyLjU5LjI5IDEuNDguNzIyIDIuNDA5IDEuMTQxTTIxLjMzIDYuODEzYzIuNDE4IDAgMy42MDIgMS43MiAzLjk0NSAzLjQ3SDE3LjIzYy40Mi0xLjc1NCAxLjkxLTMuNDcgNC4xLTMuNDdtMjMuNzAzLjA1VjMuNzE4aC0yLjUxVjBIMzkuNDR2My43MThoLTYuMjFjLTIuODY3LjAwMi00Ljk0OCAxLjk5LTQuOTQ4IDQuNzMgMCAuMjk0LjAyNS42MTIuMDgzLjk0Mi0uOTc3LTMuNDkxLTMuNTUzLTUuNjcyLTcuMDExLTUuNjcyLTQuMjMxIDAtNy40NjUgMy4zOTctNy43MzYgNy45OTl2LS45NzhjMC0zLjg3Mi0zLjA1NS03LjAyLTYuODEtNy4wMkMzLjA1NSAzLjcxOCAwIDYuODY2IDAgMTAuNzM4djEwLjA2NWgzLjEyVjEwLjc0YzAtMi4wOTYgMS42NTQtMy44MDMgMy42ODktMy44MDMgMi4wMzMgMCAzLjY4OCAxLjcwNyAzLjY4OCAzLjgwM3YxMC4wNjVoMy4xMnYtNy44MzFDMTMuODkgMTcuNTkyIDE3LjE2OCAyMSAyMS40NTMgMjFjMi42MTYgMCA0LjkyNC0xLjU2NyA2LjIzLTMuMzgyLjk3NiAyLjE1IDIuODgyIDMuMzgyIDUuMjM1IDMuMzgyIDIuNzI4IDAgNS40OS0xLjc5NyA1LjQ5LTUuMjMyIDAtMi4wNTYtMS4xNTktMy43MzctMy4yNjItNC43MzQtLjI2OS0uMTI2LS40ODYtLjIzMi0uNjk0LS4zMzRsLS4wMjgtLjAxNWE1MC43OTQgNTAuNzk0IDAgMCAwLS43NDQtLjM1N2MtMS4zNzUtLjYzNi0yLjAzLTEuMTAzLTIuMDMtMi4wMzIgMC0uODE3LjcxLTEuNDMzIDEuNTg1LTEuNDMzaDYuMjA2djguOTY0YzAgMi44NTQgMi4yNSA1LjE3MyA1LjAxNiA1LjE3M3YtMy4xNzhjLTEuMDY2IDAtMS45MzQtLjg5NS0xLjkzNC0xLjk5NVY2Ljg2M2MxLjIzMy4wMDIgMi4xODQgMCAyLjUxMSAwIiBmaWxsPSIjN0M4Mjg3IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4K">
-                </a>
-                <h1>Welcome to Support Admin</h1>
-                <div id="button" class="login-container">
-                    Please login with authorized account
-                    <div id="custom-signin2" class="login-button"></div>
-                    <div id="button-error" class="login-error"></div>
+    <div class="login">
+        <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="-21 237 654 310">
+            <path d="M612 348.3v-41.8h-34.3v-48.8h-41.8v48.8h-84.3c-38.9 0-67.4 26.2-67.4 62.2 0 4.1.6 8.1 1.2 12.2-12.8-45.3-48.2-74.4-95.3-74.4-57.5 0-101.7 44.8-105.2 105.2v-12.8c0-51.1-41.3-92.4-92.4-92.4S0 348.3 0 399.5V532h42.4V399.5c0-27.9 22.7-50 50-50 27.9 0 50 22.7 50 50V532h42.4V428.5c3.5 61 48.2 105.8 106.4 105.8 35.5 0 66.8-20.9 84.9-44.8 13.4 28.5 38.9 44.8 70.9 44.8 37.2 0 74.4-23.8 74.4-69.2 0-27.3-15.7-49.4-44.2-62.2-3.5-1.7-6.4-2.9-9.3-4.6h-.6c-3.5-1.7-6.4-2.9-9.9-4.6-18-8.1-27.3-14.5-27.3-26.7 0-11 9.9-18.6 21.5-18.6h84.3v118c0 37.8 30.8 68 68 68v-41.8c-14.5 0-26.2-11.6-26.2-26.2v-118c16.9-.1 30.2-.1 34.3-.1zm-322-.5c33.1 0 48.8 22.7 53.5 45.9H234.2c5.8-23.9 26.2-45.9 55.8-45.9zm167.4 95.9c11.6 5.2 18.6 14.5 18.6 25.6 0 14.5-11 22.7-29.6 22.7-19.8 0-28.5-17.4-30.8-22.7l-2.9-6.4h-71c-9.3 15.7-27.9 29.6-50 29.6-39.5 0-58.7-30.8-61.6-61h160.4v-6.4c0-12.8-1.2-24.4-3.5-35.5 4.6 13.9 15.1 28.5 37.2 38.9 8.8 4.1 20.4 9.9 33.2 15.2z"></path>
+        </svg>
+
+        <div class="circle">
+            <svg class="circle-border" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="95" />
+            </svg>
+            <div class="circle-background">
+                <svg id="button" class="g-label" viewBox="0 0 19 19">
+                    <defs>
+                        <filter id="f-shadow" x="0" y="0" width="120%" height="120%">
+                            <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0">
+                                <animate attributeName="dx" from="0" to=".5" dur="1s" begin="2.5s" fill="freeze" repeatCount="1"></animate>
+                                <animate attributeName="dy" from="0" to=".5" dur="1s" begin="2.5s" fill="freeze" repeatCount="1"></animate>
+                            </feOffset>
+                            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="0">
+                                <animate attributeName="stdDeviation" from="0" to=".3" dur="1s" begin="2.5s" fill="freeze" repeatCount="1"></animate>
+                            </feGaussianBlur>
+                            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                        </filter>
+                    </defs>
+                    <g xmlns="http://www.w3.org/2000/svg" class="g-label__group">
+                        <path d="M17.64,9.20454545 C17.64,8.56636364 17.5827273,7.95272727 17.4763636,7.36363636 L9,7.36363636 L9,10.845 L13.8436364,10.845 C13.635,11.97 13.0009091,12.9231818 12.0477273,13.5613636 L12.0477273,15.8195455 L14.9563636,15.8195455 C16.6581818,14.2527273 17.64,11.9454545 17.64,9.20454545 L17.64,9.20454545 Z" id="Shape" />
+                        <path d="M9,18 C11.43,18 13.4672727,17.1940909 14.9563636,15.8195455 L12.0477273,13.5613636 C11.2418182,14.1013636 10.2109091,14.4204545 9,14.4204545 C6.65590909,14.4204545 4.67181818,12.8372727 3.96409091,10.71 L0.957272727,10.71 L0.957272727,13.0418182 C2.43818182,15.9831818 5.48181818,18 9,18 L9,18 Z" id="Shape" />
+                        <path d="M3.96409091,10.71 C3.78409091,10.17 3.68181818,9.59318182 3.68181818,9 C3.68181818,8.40681818 3.78409091,7.83 3.96409091,7.29 L3.96409091,4.95818182 L0.957272727,4.95818182 C0.347727273,6.17318182 0,7.54772727 0,9 C0,10.4522727 0.347727273,11.8268182 0.957272727,13.0418182 L3.96409091,10.71 L3.96409091,10.71 Z" id="Shape" />
+                        <path d="M9,3.57954545 C10.3213636,3.57954545 11.5077273,4.03363636 12.4404545,4.92545455 L15.0218182,2.34409091 C13.4631818,0.891818182 11.4259091,0 9,0 C5.48181818,0 2.43818182,2.01681818 0.957272727,4.95818182 L3.96409091,7.29 C4.67181818,5.16272727 6.65590909,3.57954545 9,3.57954545 L9,3.57954545 Z" id="Shape" />
+                    </g>
+                    <g xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.64,9.20454545 C17.64,8.56636364 17.5827273,7.95272727 17.4763636,7.36363636 L9,7.36363636 L9,10.845 L13.8436364,10.845 C13.635,11.97 13.0009091,12.9231818 12.0477273,13.5613636 L12.0477273,15.8195455 L14.9563636,15.8195455 C16.6581818,14.2527273 17.64,11.9454545 17.64,9.20454545 L17.64,9.20454545 Z" id="Shape" fill="#4285F4" />
+                        <path d="M9,18 C11.43,18 13.4672727,17.1940909 14.9563636,15.8195455 L12.0477273,13.5613636 C11.2418182,14.1013636 10.2109091,14.4204545 9,14.4204545 C6.65590909,14.4204545 4.67181818,12.8372727 3.96409091,10.71 L0.957272727,10.71 L0.957272727,13.0418182 C2.43818182,15.9831818 5.48181818,18 9,18 L9,18 Z" id="Shape" fill="#34A853" />
+                        <path d="M3.96409091,10.71 C3.78409091,10.17 3.68181818,9.59318182 3.68181818,9 C3.68181818,8.40681818 3.78409091,7.83 3.96409091,7.29 L3.96409091,4.95818182 L0.957272727,4.95818182 C0.347727273,6.17318182 0,7.54772727 0,9 C0,10.4522727 0.347727273,11.8268182 0.957272727,13.0418182 L3.96409091,10.71 L3.96409091,10.71 Z" id="Shape" fill="#FBBC05"/>
+                        <path d="M9,3.57954545 C10.3213636,3.57954545 11.5077273,4.03363636 12.4404545,4.92545455 L15.0218182,2.34409091 C13.4631818,0.891818182 11.4259091,0 9,0 C5.48181818,0 2.43818182,2.01681818 0.957272727,4.95818182 L3.96409091,7.29 C4.67181818,5.16272727 6.65590909,3.57954545 9,3.57954545 L9,3.57954545 Z" id="Shape" fill="#EA4335" />
+                        <path d="M0,0 L18,0 L18,18 L0,18 L0,0 Z" id="Shape" />
+                    </g>
+                </svg>
+                <div class="title">
+                    <span>WELCOME</span><br>
+                    TO SUPPORT ADMIN
                 </div>
-                <div id="welcome" class="login-container" style="display: none;">
-                    <p>Hello <b id="welcome-name"></b>,</p>
-                    <p>You are redirecting to the dashboard now...</p>
-                    <p>If you are not redirected automatically click <a href="#">here</a></p>
-                    <div class="login-loader"></div>
+                <div id="hint" class="hint">
+                    Press to login
                 </div>
             </div>
-        </div>
-        <div id="content">
-            <div id="sidebar"></div>
-            <div id="main"></div>
         </div>
     </div>
-
+    <script src="https://apis.google.com/js/api:client.js"></script>
     <script src="js/script.js"></script>
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </body>
 </html>

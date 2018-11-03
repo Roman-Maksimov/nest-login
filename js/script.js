@@ -1,3 +1,15 @@
+var googleUser = {};
+
+var startApp = function() {
+    gapi.load('auth2', function(){
+        auth2 = gapi.auth2.init({
+            client_id: '542471590977-1mcbrdd3g7jmr1v4artceagt2d8t9ih4.apps.googleusercontent.com',
+            cookiepolicy: 'single_host_origin',
+        });
+        attachSignin(document.getElementById('button'));
+    });
+};
+
 var toggle = false;
 
 function showWelcome(googleUser) {
@@ -11,35 +23,25 @@ function showWelcome(googleUser) {
 }
 
 function showError(error) {
-    var button = document.getElementById('button');
-    var buttonError = document.getElementById('button-error');
+    var hint = document.getElementById('hint');
 
-    button.classList.add('login-container_error');
-    buttonError.innerText = error;
+    hint.classList.add('hint_error');
+    hint.innerText = error;
 }
 
-function onSuccess(googleUser) {
-    if (toggle) {
-        showWelcome(googleUser);
-    } else {
-        showError('Your account is not authorized');
-    }
+function attachSignin(element) {
+    auth2.attachClickHandler(element, {},
+        function(googleUser) {
+            if (toggle) {
+                showWelcome(googleUser);
+            } else {
+                showError('Please login with authorized account');
+            }
 
-    toggle = !toggle;
+            toggle = !toggle;
+        }, function(error) {
+            showError(error.error);
+        });
 }
 
-function onFailure(error) {
-    showError(error);
-}
-
-function renderButton() {
-    gapi.signin2.render('custom-signin2', {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-    });
-}
+startApp();
